@@ -11,11 +11,10 @@ app = Flask(__name__)
 # client = MongoClient('mongodb://yash-khilavdiya:roO0h6bj8Ym9YA71AcRFl5FcA8PYY5yhJ7qOXJJxmIWOYQdWpkJ6zhqQdBqtU7D0kefRq4vvnmoXACDbm07ZQg==@yash-khilavdiya.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@yash-khilavdiya@')
 # db = client.sample  # Select the MongoDB database
 
-@app.route('/')
-def index():
-    # employees = db.Record.find()  # Retrieve all documents from the 'Record' collection
-    # return render_template('index.html', employees=employees)
-    return jsonify({"message" : "api is returning response"})
+@app.route('/api/data', methods=['GET'])
+def get_data():
+    data = {'message': 'Hello from Flask API!'}
+    return jsonify(data)
 
 # @app.route('/api/display', methods=['POST', 'GET'])
 # def display():
@@ -120,5 +119,5 @@ def index():
 #     db.Record.delete_one({'_id': id})  
 #     return redirect('/')
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)
