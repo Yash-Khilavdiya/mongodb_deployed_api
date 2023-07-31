@@ -8,8 +8,8 @@ from pymongo.errors import WriteError, WriteConcernError
 app = Flask(__name__)
 # client = MongoClient('localhost', 27017)  # Connect to MongoDB Local Database
 # Connect to MongoDB Local Database on Microsoft Azure
-client = MongoClient('mongodb://yash-khilavdiya:roO0h6bj8Ym9YA71AcRFl5FcA8PYY5yhJ7qOXJJxmIWOYQdWpkJ6zhqQdBqtU7D0kefRq4vvnmoXACDbm07ZQg==@yash-khilavdiya.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@yash-khilavdiya@')
-db = client.sample  # Select the MongoDB database
+# client = MongoClient('mongodb://yash-khilavdiya:roO0h6bj8Ym9YA71AcRFl5FcA8PYY5yhJ7qOXJJxmIWOYQdWpkJ6zhqQdBqtU7D0kefRq4vvnmoXACDbm07ZQg==@yash-khilavdiya.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@yash-khilavdiya@')
+# db = client.sample  # Select the MongoDB database
 
 @app.route('/')
 def index():
