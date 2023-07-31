@@ -15,7 +15,7 @@ app = Flask(__name__)
 def index():
     # employees = db.Record.find()  # Retrieve all documents from the 'Record' collection
     # return render_template('index.html', employees=employees)
-    return {"message" : "api is returning response"}
+    return jsonify({"message" : "api is returning response"})
 
 # @app.route('/api/display', methods=['POST', 'GET'])
 # def display():
