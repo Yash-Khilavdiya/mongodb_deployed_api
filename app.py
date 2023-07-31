@@ -120,5 +120,5 @@ def index():
 #     db.Record.delete_one({'_id': id})  
 #     return redirect('/')
 
-# if __name__ == "__main__":
-#     app.run(debug=True, port=5000)
+if __name__ == "__main__":
+    app.run(debug=True, port=5000)
