@@ -15,7 +15,7 @@ db = client.sample  # Select the MongoDB database
 @app.route('/api/data', methods=['GET'])
 def get_data():
     data = {'message': 'Hello from Flask API! for MongoDB'}
-    return jsonify("message" : data)
+    return jsonify(data)
 
 @app.route('/api/display', methods=['GET'])
 def display():
@@ -25,9 +25,11 @@ def display():
     for record in cursor:
         record['_id'] = str(record['_id'])
         record_list.append(record)
-        record_dict = {
-            "message" : record_list
-        }
+    
+    record_dict = {
+            "msg" : record_list
+    }
+    
     return jsonify(record_dict)
 
 @app.route('/api/insert', methods=['POST'])
@@ -122,4 +124,3 @@ def insert():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
