@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 @app.route('/api/data', methods=['GET'])
 def get_data():
-    data = {'message': 'Hello from Flask API!'}
+    data = {'message': 'Hello from Flask API! for MongoDB'}
     return jsonify(data)
 
 # @app.route('/api/display', methods=['POST', 'GET'])
