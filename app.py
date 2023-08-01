@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, jsonify
-import pymongo
+from pymongo import MongoClient.
 # from pymongo import MongoClient
 # from bson import ObjectId
 # import json
