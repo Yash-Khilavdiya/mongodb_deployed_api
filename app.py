@@ -1,4 +1,3 @@
-# from flask import Flask, render_template, request, redirect, jsonify
 from flask import Flask, jsonify
 from pymongo import MongoClient
 import json
@@ -26,39 +25,36 @@ def display():
         record_list.append(record)
     return jsonify(record_list)
 
-# @app.route('/api/insert', methods=['POST'])
-# def insert():
-#     raw_data = request.get_data()
-#     data_str = raw_data.decode('utf-8')
-#     json_data = json.loads(data_str)
+@app.route('/api/insert', methods=['POST'])
+def insert():
+    raw_data = request.get_data()
+    data_str = raw_data.decode('utf-8')
+    json_data = json.loads(data_str)
 
-#     Name = json_data['Name']
-#     ContactNo = json_data['ContactNo']
-#     Address = json_data['Address']
-#     CollegeName = json_data['CollegeName']
+    Name = json_data['Name']
+    ContactNo = json_data['ContactNo']
+    Address = json_data['Address']
+    CollegeName = json_data['CollegeName']
 
-#     employees = {
-#             'Name': Name,
-#             'ContactNo': ContactNo,
-#             'Address': Address,
-#             'CollegeName': CollegeName
-#         }
+    employees = {
+            'Name': Name,
+            'ContactNo': ContactNo,
+            'Address': Address,
+            'CollegeName': CollegeName
+        }
         
-#     try:
-#         # Insert the document into the collection
-#         result = db.Record.insert_one(employees)
+    try:
+        # Insert the document into the collection
+        result = db.Record.insert_one(employees)
 
-#         # Access the inserted document's _id
-#         inserted_id = result.inserted_id
-#         return {"inserted_document_id" : str(inserted_id), "msg" : "document inserted successfully"}
+        # Access the inserted document's _id
+        inserted_id = result.inserted_id
+        return {"inserted_document_id" : str(inserted_id), "msg" : "document inserted successfully"}
     
-#     except (WriteError, WriteConcernError) as e:
-#         # Handle the exception
-#         return {"msg" : "failed in inserting document"}
+    except (WriteError, WriteConcernError) as e:
+        # Handle the exception
+        return {"msg" : "failed in inserting document"}
     
-    
-
-
 # @app.route('/add', methods=['POST'])
 # def add():
 #     if request.method == 'POST':
