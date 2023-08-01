@@ -25,7 +25,10 @@ def display():
     for record in cursor:
         record['_id'] = str(record['_id'])
         record_list.append(record)
-    return jsonify(record_list)
+        record_dict = {
+            "message" : record_list
+        }
+    return jsonify(record_dict)
 
 @app.route('/api/insert', methods=['POST'])
 def insert():
