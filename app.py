@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, jsonify
-from pymongo import MongoClient
+import pymongo
+# from pymongo import MongoClient
 # from bson import ObjectId
 # import json
 # from pymongo.errors import WriteError, WriteConcernError
@@ -121,3 +122,4 @@ def get_data():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
