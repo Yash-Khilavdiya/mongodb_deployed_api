@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 from pymongo import MongoClient
 import json
 from pymongo.errors import WriteError, WriteConcernError
-# from flask-cors import CORS
+from flask-cors import CORS
 
 
 app = Flask(__name__)
