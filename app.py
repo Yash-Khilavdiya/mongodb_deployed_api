@@ -2,9 +2,11 @@ from flask import Flask, jsonify, request
 from pymongo import MongoClient
 import json
 from pymongo.errors import WriteError, WriteConcernError
+from flask_cors import CORS
 
 
 app = Flask(__name__)
+CORS(app)
 # client = MongoClient('localhost', 27017)  # Connect to MongoDB Local Database
 # Connect to MongoDB Local Database on Microsoft Azure
 client = MongoClient('mongodb://yash-khilavdiya:roO0h6bj8Ym9YA71AcRFl5FcA8PYY5yhJ7qOXJJxmIWOYQdWpkJ6zhqQdBqtU7D0kefRq4vvnmoXACDbm07ZQg==@yash-khilavdiya.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@yash-khilavdiya@')
