@@ -15,7 +15,7 @@ db = client.sample  # Select the MongoDB database
 @app.route('/api/data', methods=['GET'])
 def get_data():
     data = {'message': 'Hello from Flask API! for MongoDB'}
-    return jsonify(data)
+    return jsonify("message" : data)
 
 @app.route('/api/display', methods=['GET'])
 def display():
