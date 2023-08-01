@@ -16,15 +16,15 @@ def get_data():
     data = {'message': 'Hello from Flask API! for MongoDB'}
     return jsonify(data)
 
-# @app.route('/api/display', methods=['POST', 'GET'])
-# def display():
-#     cursor = db.Record.find()
-#     record_list = []
+@app.route('/api/display', methods=['GET'])
+def display():
+    cursor = db.Record.find()
+    record_list = []
 
-#     for record in cursor:
-#         record['_id'] = str(record['_id'])
-#         record_list.append(record)
-#     return jsonify(record_list)
+    for record in cursor:
+        record['_id'] = str(record['_id'])
+        record_list.append(record)
+    return jsonify(record_list)
 
 # @app.route('/api/insert', methods=['POST'])
 # def insert():
